@@ -10,3 +10,4 @@ wheels/
 .venv
 src/knot/static
 .build/
+.databricks
