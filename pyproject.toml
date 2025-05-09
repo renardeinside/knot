@@ -1,0 +1,30 @@
+[project]
+name = "knot"
+version = "0.1.0"
+description = "Example project for Databricks Apps with UI bunded via Vite and FastAPI"
+readme = "README.md"
+authors = [
+    { name = "renardeinside", email = "polarpersonal@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.12",
+    "uvicorn>=0.34.2",
+]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "hatchling>=1.27.0",
+]
+
+[tool.hatch.build.hooks.custom]
+path = "hooks/build.py"
+
+[tool.hatch.build.targets.wheel]
+# we need to explicitly include this folder because it's .gitignore'd
+artifacts = ["src/knot/static"]

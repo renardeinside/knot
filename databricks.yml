@@ -1,0 +1,26 @@
+bundle:
+  name: knot
+
+sync:
+  include:
+    - .build
+
+artifacts:
+  default:
+    type: whl
+    path: .
+    build: uv build --wheel
+
+resources:
+  apps:
+    knot:
+      name: "knot"
+      description: "Example of a JS-based frontend + Python backend on Databricks Apps"
+      source_code_path: ./.build
+      config:
+        command: ["uvicorn", "knot.app:app"]
+
+targets:
+  dev:
+    mode: development
+    default: true
