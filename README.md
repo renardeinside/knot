@@ -17,3 +17,15 @@ To prepare the app for deployment, we need to:
 2. prepare the wheel and put it into the `./requirements.txt` as a reference
 
 Take a look at [`build.py`](./hooks/build.py) for the details.
+
+## Deploying and running the app
+
+1. Run the deploy command for Databricks Bundles:
+```bash
+databricks bundle deploy -p <your-profile-name>
+```
+
+2. Run the app:
+```bash
+databricks bundle run knot -p <your-profile-name>
+```
