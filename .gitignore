@@ -11,3 +11,5 @@ wheels/
 src/knot/static
 .build/
 .databricks
+
+src/knot/_version.py
